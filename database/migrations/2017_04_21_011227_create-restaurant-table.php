@@ -13,7 +13,19 @@ class CreateRestaurantTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('restaurants', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name')->default('');
+        $table->string('location');
+        $table->string('phone');
+        $table->string('price');
+        $table->string('style');
+        $table->string('hours');
+        $table->integer('rating')->default(0);
+        $table->string('website');
+        $table->timestamps();
+
+      });
     }
 
     /**
@@ -23,6 +35,6 @@ class CreateRestaurantTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('movies');
     }
 }
