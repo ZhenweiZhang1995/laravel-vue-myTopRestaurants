@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
+
+// api routes
+Route::get('/restaurants', 'RestaurantController@index');
+Route::post('/restaurants', 'RestaurantController@create');
+Route::get('/restaurants/{id}', 'RestaurantController@show');
+Route::put('/restaurants/{id}', 'RestaurantController@update');
+Route::delete('/restaurants/{id}', 'RestaurantController@destroy');
