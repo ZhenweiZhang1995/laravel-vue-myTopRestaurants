@@ -1,0 +1,124 @@
+<template lang="html">
+  <div class="Restaurant panel panel-default">
+    <!-- <div class="panel-heading">
+      <a :href="'tel:' + contact.phone">
+        <i class="glyphicon glyphicon-earphone"></i>
+      </a>
+
+      <a class="tool" href="#" @click.prevent="remove">
+        <i class="glyphicon glyphicon-remove pull-right"></i>
+      </a>
+
+      <a class="tool" href="#" @click.prevent="editing = true" v-show="!editing">
+        <i class="glyphicon glyphicon-pencil pull-right"></i>
+      </a>
+    </div>
+    <div class="panel-body">
+      <div class="live" v-show="!editing">
+        {{ contact.first }} {{ contact.last }}
+      </div>
+      <div class="editing" v-show="editing">
+        <p>
+          <input type="text" v-model="first" />
+          <input type="text" v-model="last" />
+          <input type="text" v-model="phone" />
+        </p>
+        <p>
+          <button class="btn btn-success" @click="save">Save</button>
+          <button class="btn btn-default" @click="cancel">Cancel</button>
+        </p>
+      </div>
+    </div> -->
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+  props: [
+    'restaurant'
+  ],
+  data () {
+    return {
+      name: this.restaurant.name,
+      location: this.restaurant.last,
+      phone: this.restaurant.phone,
+      price: this.restaurant.price,
+      style: this.restaurant.style,
+      hours: this.restaurant.hours,
+      rating: this.restaurant.rating,
+      website: this.restaurant.website,
+      loading: false
+    }
+  },
+
+  methods: {
+
+    remove () {
+      console.log('Restaurant -> remove');
+      this.loading = true;
+      axios.delete(`/restaurants/${this.restaurant.id}`)
+        .then((response) => {
+          console.log('Restaurant -> remove success');
+          this.$emit('deleted')
+          this.loading = false;
+        })
+        .catch((error) => {
+          console.log('Restaurant -> remove error');
+          // stop deleting and dont remove from the dom
+          // tell the user deletion failed
+        });
+    },
+
+    save () {
+      console.log('Restaurant -> save');
+      axios.put(`/restaurants/${this.restaurant.id}`, {
+        name: this.name,
+        location: this.location,
+        phone: this.phone,
+        price: this.price,
+        hours: this.hours,
+        rating: this.rating,
+        website: this.website
+        })
+        .then((response) => {
+          console.log('Restaurant -> save success');
+          this.$emit('updated', {
+            name: this.name,
+            location: this.location,
+            phone: this.phone,
+            price: this.price,
+            hours: this.hours,
+            rating: this.rating,
+            website: this.website
+          });
+          this.editing = false;
+        })
+        .catch((error) => {
+          console.log('Restaurant -> save error');
+          //show the user that it couldn't be updated
+        });
+    },
+
+    cancel () {
+      console.log('Restaurant -> cancel');
+      this.name = this.restaurant.name;
+      this.location = this.restaurant.location;
+      this.phone = this.restaurant.phone;
+      this.price = this.restaurant.price;
+      this.style = this.restaurant.style;
+      this.hours = this.restaurant.hours;
+      this.rating = this.restaurant.rating;
+      this.website = this.restaurant.website;
+      this.editing = false;
+    }
+
+  }
+
+
+}
+</script>
+
+<style lang="css">
+
+</style>
