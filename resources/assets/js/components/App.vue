@@ -1,12 +1,15 @@
 <template lang="html">
  <div class="container">
    <h1>test</h1>
+   <p>
+     Hello World
+   </p>
  </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Rstaurant from './Restaurant';
+import Restaurant from './Restaurant';
 import RestaurantForm from './RestaurantForm';
 
 export default {

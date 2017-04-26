@@ -9,6 +9,7 @@
     </head>
     <body>
         <div id="app"></div>
+        <!-- app.blade.php is here -->
 
         <script>
             window.Laravel = {!! json_encode([
