@@ -1,21 +1,30 @@
 <template lang="html">
  <div class="container">
-   <h1>test</h1>
-   <p>
-     Hello World
-   </p>
+
+   <!-- <div class="tabs">
+<ul>
+<li class="is-active"><a>Pictures</a></li>
+<li><a>Music</a></li>
+<li><a>Videos</a></li>
+<li><a>Documents</a></li>
+</ul>
+</div> -->
+
+   <RestaurantForm @created="fetch"></RestaurantForm>
  </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Restaurant from './Restaurant';
+// import Restaurant from './Restaurant';
 import RestaurantForm from './RestaurantForm';
+// import Ratinga from './Ratinga';
 
 export default {
   components: {
-    Restaurant,
+    // Restaurant,
     RestaurantForm
+    // Ratinga
   },
 
   data () {

@@ -23,7 +23,7 @@ class CreateRestaurantTable extends Migration
         $table->string('hours');
         $table->integer('rating')->default(0);
         $table->string('website');
-        $table->string('path')->default('/image/default.jpg');
+        // $table->string('path')->default('/image/default.jpg');
         $table->timestamps();
 
       });
