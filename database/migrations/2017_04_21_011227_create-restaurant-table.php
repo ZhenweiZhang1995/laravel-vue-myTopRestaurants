@@ -16,13 +16,13 @@ class CreateRestaurantTable extends Migration
       Schema::create('restaurants', function (Blueprint $table) {
         $table->increments('id');
         $table->string('name')->default('');
-        $table->string('location');
-        $table->string('phone');
-        $table->string('price');
-        $table->string('style');
-        $table->string('hours');
+        $table->string('location')->default('');
+        $table->string('phone')->default('');
+        $table->string('price')->default('');
+        $table->string('style')->default('');
+        $table->string('hours')->default('');
         $table->integer('rating')->default(0);
-        $table->string('website');
+        $table->string('website')->default('');
         // $table->string('path')->default('/image/default.jpg');
         $table->timestamps();
 

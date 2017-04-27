@@ -28,6 +28,14 @@
       rating
     </p>
     <input type="text" v-model="rating" />
+
+    <div class="Ratinga">
+      <form>
+        <Rating :items="items" legend="Default star rating:" :value="rating" @change="updateStar"></Rating>
+      </form>
+      {{ rating }}
+    </div>
+
     <p>
       website
     </p>
@@ -35,7 +43,7 @@
     <button class="btn btn-primary" @click="create" :disabled="loading">New Restaurant</button>
 
 
-    <!-- <div class="field is-horizontal">
+    <div class="field is-horizontal">
       <div class="field-label is-normal">
         <label class="label">Restaurant name</label>
       </div>
@@ -62,12 +70,12 @@
           <div class="control">
             <div class="select is-fullwidth">
               <select v-model="style">
-                <option>American</option>
-                <option>Chinese</option>
-                <option>Italian</option>
-                <option>Meditarian</option>
-                <option>Japanese</option>
-                <option>Fast Food</option>
+                <option value="Ameircan">American</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Italian">Italian</option>
+                <option value="Meditarian">Meditarian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Fast Food">Fast Food</option>
               </select>
             </div>
           </div>
@@ -171,16 +179,24 @@
         </div>
       </div>
 
-    </div> -->
+    </div>
+
+
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Rating from 'vue-bulma-rating';
+
 //no loader yet
 
 
 export default {
+  components: {
+    Rating
+  },
+
   data(){
     return{
       name:'',
@@ -189,10 +205,32 @@ export default {
       price:'',
       style:'',
       hours:'',
-      rating:'',
+      rating: 2,
       website:'',
-      path:'',
-      loading:false
+      // path:'',
+      loading:false,
+      items: [
+        {
+          title: '5 Stars',
+          value: 5
+        },
+        {
+          title: '4 Stars',
+          value: 4
+        },
+        {
+          title: '3 Stars',
+          value: 3
+        },
+        {
+          title: '2 Stars',
+          value: 2
+        },
+        {
+          title: '1 Star',
+          value: 1
+        }
+      ]
     }
   },
   methods:{
@@ -215,7 +253,7 @@ export default {
         hours:this.hours,
         rating:this.rating,
         website:this.website,
-        path:this.path
+        // path:this.path
       })
       .then((response) => {
         console.log('RestaurantForm -> sendRequest success');
@@ -238,7 +276,10 @@ export default {
       this.hours = '';
       this.rating = '';
       this.website = '';
-      this.path = '';
+      // this.path = '';
+    },
+    updateStar (val) {
+      this.rating = val
     }
 
   }

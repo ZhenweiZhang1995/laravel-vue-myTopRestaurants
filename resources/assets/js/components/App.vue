@@ -1,15 +1,6 @@
 <template lang="html">
  <div class="container">
 
-   <!-- <div class="tabs">
-<ul>
-<li class="is-active"><a>Pictures</a></li>
-<li><a>Music</a></li>
-<li><a>Videos</a></li>
-<li><a>Documents</a></li>
-</ul>
-</div> -->
-
    <RestaurantForm @created="fetch"></RestaurantForm>
  </div>
 </template>
@@ -18,13 +9,11 @@
 import axios from 'axios';
 // import Restaurant from './Restaurant';
 import RestaurantForm from './RestaurantForm';
-// import Ratinga from './Ratinga';
 
 export default {
   components: {
     // Restaurant,
     RestaurantForm
-    // Ratinga
   },
 
   data () {

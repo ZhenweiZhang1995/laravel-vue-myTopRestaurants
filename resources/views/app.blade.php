@@ -9,7 +9,7 @@
     </head>
     <body>
 
-      <!-- <div class="hero">
+      <div class="hero">
           <section class="hero is-primary is-large header-image">
             <div class="hero-head">
               <header class="nav">
@@ -125,7 +125,7 @@
               </div>
             </div>
           </footer>
-      </div> -->
+      </div>
 
 
         <div id="app"></div>
@@ -138,7 +138,7 @@
         </script>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
