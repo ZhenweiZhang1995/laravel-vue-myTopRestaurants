@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('app');
 });
 
+Route::get('/style', function () {
+    return view('styleGuide');
+});
+
 // api routes
 Route::get('/restaurants', 'RestaurantController@index');
 Route::post('/restaurants', 'RestaurantController@create');

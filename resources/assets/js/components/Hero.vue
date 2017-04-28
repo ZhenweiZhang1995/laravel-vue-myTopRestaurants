@@ -18,7 +18,7 @@
                 <a class="nav-item is-active">
                   Home
                 </a>
-                <a class="nav-item">
+                <a href="/style" class="nav-item">
                   Style Guide
                 </a>
                 <a href="https://zhenweizhang1995.gitbooks.io/rate-restaurant-api/content/" class="nav-item">

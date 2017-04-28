@@ -5,7 +5,11 @@
 
      <RestaurantForm @created="fetch"></RestaurantForm>
      <br>
+     <br>
+
      <div class="RestaurantList" v-show="restaurants.length > 0">
+       <h1>Restaurant List</h1>
+       <br>
        <Restaurant v-for="(newRest, index) in restaurants" :key="index" :restaurant="newRest" @updated="update" @deleted="remove(index)"></Restaurant>
      </div>
    </div>
@@ -77,4 +81,10 @@ export default {
 </script>
 
 <style lang="css">
+.RestaurantList{
+  padding-top: 20px;
+}
+Restaurant{
+  padding-top: 3%;
+}
 </style>

@@ -19,7 +19,7 @@
         </script>
         <link rel="stylesheet" href="{{ mix('css/app.css')}}">
         <!-- <link rel="stylesheet" href="/css/master.css" media="screen" title="no title"> -->
-        <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title">
+        <!-- <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" charset="utf-8"></script>
         <script src="js/map.js"> </script>

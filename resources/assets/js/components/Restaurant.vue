@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="Restaurant panel panel-default">
-    <!-- <h1>Upload your favourite restaurant</h1> -->
 
     <div class="card">
       <header class="card-header">
@@ -35,7 +34,7 @@
         </div>
 
         <!-- editting mode -->
-        <div class="columns is-mobile" v-show="editing">
+        <div class="columns is-mobile editmode" v-show="editing">
           <div class="column">
             <p><b>Style: </b>
               <div class="select is-fullwidth">
@@ -233,11 +232,11 @@ export default {
     margin-left: 5%;
   }
 
-  input:focus {
+  .editmode input:focus {
     border: 1px solid #3273dc;
   }
 
-  select:focus{
+  .editmode select:focus{
     border: 1px solid #3273dc;
   }
 </style>
