@@ -18,15 +18,21 @@
         <p><b>Style: </b>{{ restaurant.style }}</p>
         <p><b>Hours: </b>{{ restaurant.hours }}</p>
         <p><b>Price: </b>{{ restaurant.price }}</p>
-        <p><b>Location: </b>{{ restaurant.location }}</p>
+        <p><b>Location: </b><address class="">{{ restaurant.location }}</address></p>
         <p><b>Telephone: </b> <a href="'tel:' + restaurant.phone">{{ restaurant.phone }}</a> </p>
         <p><b>Website: </b>{{ restaurant.website }}</p>
+        <p>
+          <b>Rating: </b>
+            <form>
+              <Rating :items="items" :value="rating"></Rating>
+            </form>
+        </p>
 
-        <iframe
-        width="600" height="450" frameborder="0" style="border:0"
+        <!-- <iframe
+        width="300" height="225" frameborder="0" style="border:0"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHe3uOWBYiKpzlfrUMoRtqqerXHuoYfkQ
         &q=Space+Needle,Seattle+WA" allowfullscreen>
-        </iframe>
+        </iframe> -->
 
 
         <a>#{{ restaurant.style }}</a>. <a>#{{ restaurant.location }}</a>
@@ -35,8 +41,8 @@
       </div>
     </div>
     <footer class="card-footer">
-      <a class="card-footer-item">Edit</a>
-      <a class="card-footer-item">Delete</a>
+      <a class="card-footer-item" @click="save">Edit</a>
+      <a class="card-footer-item" @click="cancel">Delete</a>
     </footer>
 </div>
 
@@ -67,7 +73,29 @@ export default {
       hours: this.restaurant.hours,
       rating: this.restaurant.rating,
       website: this.restaurant.website,
-      loading: false
+      loading: false,
+      items: [
+        {
+          title: '5 Stars',
+          value: 5
+        },
+        {
+          title: '4 Stars',
+          value: 4
+        },
+        {
+          title: '3 Stars',
+          value: 3
+        },
+        {
+          title: '2 Stars',
+          value: 2
+        },
+        {
+          title: '1 Star',
+          value: 1
+        }
+      ]
     }
   },
 
