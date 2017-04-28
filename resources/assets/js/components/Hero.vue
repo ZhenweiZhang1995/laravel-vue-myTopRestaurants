@@ -44,7 +44,7 @@
               Rate Restaurants
             </h1>
             <h2 class="subtitle is-5">
-              Upload and Rate your favourite restaurant
+              Post and Rate your favourite restaurant
             </h2>
             <p>
               <a href="#restaurant" class="button is-outlined is-info is-inverted">
