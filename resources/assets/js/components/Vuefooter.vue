@@ -7,7 +7,7 @@
             Website developed and designed by <a href="https://github.com/ZhenweiZhang1995">Zhenwei Zhang</a>
           </p>
           <p>
-           <a href="href="/style"">CSS Style Guide</a> can be found here.
+           <a href="/style">CSS Style Guide</a> can be found here.
           </p>
           <p>
             <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>.
