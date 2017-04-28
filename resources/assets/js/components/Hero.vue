@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="hero">
-      <section class="hero is-primary is-large header-image">
+      <section class="hero is-info is-medium header-image">
         <div class="hero-head">
           <header class="nav">
             <div class="container">
               <div class="nav-left">
-                <a class="nav-item" href="../index.html">
-                  <img src="../image/bulma-white.png" alt="Logo">
+                <a class="nav-item" href="">
+                  <span>Rate Local Restaurants</span>
                 </a>
               </div>
               <span class="nav-toggle">
@@ -19,7 +19,7 @@
                   Home
                 </a>
                 <a class="nav-item">
-                  Examples
+                  Style Guide
                 </a>
                 <a class="nav-item">
                   Documentation
@@ -29,7 +29,7 @@
                     <span class="icon">
                       <i class="fa fa-github"></i>
                     </span>
-                    <span>Download</span>
+                    <span>My Github</span>
                   </a>
                 </span>
               </div>
@@ -39,18 +39,15 @@
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title is-2">
-              Hero Heading
+              Rate Restaurants
             </h1>
             <h2 class="subtitle is-5">
-              A hero description could go here.
+              Upload and Rate your favourite restaurant
             </h2>
             <p>
-              <a class="button is-outlined">
-                <span class="icon">
-                  <i class="fa fa-download"></i>
-                </span>
+              <a class="button is-outlined is-info is-inverted">
                 <span>
-                  Download
+                  Get Started
                 </span>
               </a>
             </p>
@@ -64,34 +61,34 @@
             <div class="column is-4">
               <div class="panel">
                 <div class="panel-block section">
-                  <p class="has-text-centered"><i class="fa fa-camera-retro icon-block"></i></p>
+                  <p class="has-text-centered"><i class="fa fa fa-camera-retro fa-4x icon-block"></i></p>
                   <br>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                  <p> Post your favourite restaurant</p>
                   <br>
-                  <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
+                  <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                 </div>
               </div>
             </div>
             <div class="column is-4">
               <div class="panel">
                 <div class="panel-block section">
-                  <p class="has-text-centered"><i class="fa fa-bar-chart icon-block"></i></p>
+                  <p class="has-text-centered"><i class="fa fa-bar-chart fa-4x icon-block"></i></p>
                   <br>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                  <p> Have your own custom restaurant list</p>
                   <br>
-                  <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
                 </div>
+
               </div>
 
             </div>
             <div class="column is-4">
               <div class="panel">
                 <div class="panel-block section">
-                  <p class="has-text-centered"><i class="fa fa-cloud icon-block"></i></p>
+                  <p class="has-text-centered"><i class="fa fa-cloud fa-4x icon-block"></i></p>
                   <br>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                  <p>Edit or Delete as you wish</p>
                   <br>
-                  <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
+                  <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                 </div>
               </div>
 
@@ -100,37 +97,20 @@
         </div>
       </div>
 
-
-
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-              <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
-            </p>
-            <p>
-              <a class="icon" href="https://github.com/jgthms/bulma">
-                <i class="fa fa-github"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
   </div>
-
 </template>
 
 <script>
-
 export default {
 }
 </script>
 
 <style lang="css">
+/*body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}*/
 .header-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.89)),url('https://images.unsplash.com/1/iphone-4-closeup.jpg?dpr=1&auto=format&crop=middle&fit=crop&w=2000&h=700&q=80');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.89)),url('/images/food2.png');
 }
 .is-outlined {
   background-color:transparent;
@@ -144,10 +124,11 @@ export default {
   line-height: 1.4;
   color:#95A5A6;
 }
-.section.main {
+/*.section.main {
   background-color:#F0F0F0;
-}
+}*/
 .icon-block {
   font-size:5em;
 }
+
 </style>

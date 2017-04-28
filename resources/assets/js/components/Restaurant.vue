@@ -169,6 +169,7 @@ export default {
         .then((response) => {
           console.log('Restaurant -> save success');
           this.$emit('updated', {
+            restaurant: this.restaurant,
             name: this.name,
             location: this.location,
             phone: this.phone,
@@ -230,5 +231,13 @@ export default {
 
   card-header-title{
     margin-left: 5%;
+  }
+
+  input:focus {
+    border: 1px solid #3273dc;
+  }
+
+  select:focus{
+    border: 1px solid #3273dc;
   }
 </style>

@@ -1,5 +1,6 @@
 <template lang="html">
 <div>
+  <Hero></Hero>
    <div class="container">
 
      <RestaurantForm @created="fetch"></RestaurantForm>
@@ -7,7 +8,6 @@
      <div class="RestaurantList" v-show="restaurants.length > 0">
        <Restaurant v-for="(newRest, index) in restaurants" :key="index" :restaurant="newRest" @updated="update" @deleted="remove(index)"></Restaurant>
      </div>
-     <!-- <Restaurant></Restaurant> -->
    </div>
    <Vuefooter></Vuefooter>
  </div>
@@ -18,12 +18,14 @@ import axios from 'axios';
 import Restaurant from './Restaurant';
 import RestaurantForm from './RestaurantForm';
 import Vuefooter from './Vuefooter';
+import Hero from './Hero';
 
 export default {
   components: {
     Restaurant,
     RestaurantForm,
-    Vuefooter
+    Vuefooter,
+    Hero
   },
 
   data () {
@@ -59,6 +61,7 @@ export default {
     update (data) {
       var i = this.restaurants.indexOf(data.restaurant);
       for (var d in data) {
+        if (d === 'restaurant') continue;
         this.restaurants[i][d] = data[d];
       }
     },
