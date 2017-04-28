@@ -21,11 +21,13 @@
                 <a class="nav-item">
                   Style Guide
                 </a>
-                <a class="nav-item">
-                  Documentation
+                <a href="https://zhenweizhang1995.gitbooks.io/rate-restaurant-api/content/" class="nav-item">
+                  API Documentation
                 </a>
+
+
                 <span class="nav-item">
-                  <a class="button is-info is-outlined is-inverted">
+                  <a href="https://github.com/ZhenweiZhang1995" class="button is-info is-outlined is-inverted">
                     <span class="icon">
                       <i class="fa fa-github"></i>
                     </span>
