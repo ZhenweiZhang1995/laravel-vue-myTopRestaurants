@@ -15,10 +15,30 @@
       </header>
     <div class="card-content">
       <div class="content">
+
+        <div class="columns is-mobile">
+          <div class="column">
+            <p><b>Style: </b>{{ restaurant.style }}</p>
+            <p><b>Hours: </b>{{ restaurant.hours }}</p>
+            <p><b>Telephone: </b> <a href="'tel:' + restaurant.phone">{{ restaurant.phone }}</a> </p>
+            <p><b>Website: </b>{{ restaurant.website }}</p>
+          </div>
+          <div class="column">
+            <form>
+              <Rating :items="items" :value="rating"></Rating>
+            </form>
+            <p><b>Price Range: </b>{{ restaurant.price }}</p>
+            <p><b>Location: </b>{{ restaurant.location }}</p>
+          </div>
+        </div>
+
+
+
+<!--
         <p><b>Style: </b>{{ restaurant.style }}</p>
         <p><b>Hours: </b>{{ restaurant.hours }}</p>
-        <p><b>Price: </b>{{ restaurant.price }}</p>
-        <p><b>Location: </b><address class="">{{ restaurant.location }}</address></p>
+        <p><b>Price Range: </b>{{ restaurant.price }}</p>
+        <p><b>Location: </b>{{ restaurant.location }}</p>
         <p><b>Telephone: </b> <a href="'tel:' + restaurant.phone">{{ restaurant.phone }}</a> </p>
         <p><b>Website: </b>{{ restaurant.website }}</p>
         <p>
@@ -26,23 +46,43 @@
             <form>
               <Rating :items="items" :value="rating"></Rating>
             </form>
-        </p>
+        </p> -->
 
-        <!-- <iframe
+        <iframe
         width="300" height="225" frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHe3uOWBYiKpzlfrUMoRtqqerXHuoYfkQ
-        &q=Space+Needle,Seattle+WA" allowfullscreen>
-        </iframe> -->
+        :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyBHe3uOWBYiKpzlfrUMoRtqqerXHuoYfkQ&q='+ restaurant.location" allowfullscreen>
+        </iframe>
 
 
         <a>#{{ restaurant.style }}</a>. <a>#{{ restaurant.location }}</a>
         <br>
-        <small>Open Hours: {{ restaurant.hours }}</small>
+        <!-- <small>Open Hours: {{ restaurant.hours }}</small> -->
+      </div>
+      <div class="content" v-show="editing">
+        <div class="editing">
+          <p>
+            <input type="text" v-model="name" />
+            <input type="text" v-model="location" />
+            <input type="text" v-model="phone" />
+            <input type="text" v-model="price" />
+            <input type="text" v-model="style" />
+            <input type="text" v-model="hours" />
+            <input type="text" v-model="website" />
+          </p>
+          <p>
+            <button class="btn btn-success" @click="save">Save</button>
+            <button class="btn btn-default" @click="cancel">Cancel</button>
+          </p>
+        </div>
       </div>
     </div>
     <footer class="card-footer">
-      <a class="card-footer-item" @click="save">Edit</a>
-      <a class="card-footer-item" @click="cancel">Delete</a>
+      <!-- <button class="btn btn-success" @click="save">Save</button>
+      <button class="btn btn-default" @click="cancel">Cancel</button> -->
+      <a class="card-footer-item" @click.prevent="remove">Remove</a>
+      <a class="card-footer-item" @click.prevent="editing = true" v-show="!editing">Edit</a>
+      <a class="card-footer-item" @click="save" v-show="editing">Save</a>
+      <a class="card-footer-item" @click="cancel">Cancel</a>
     </footer>
 </div>
 
@@ -74,6 +114,7 @@ export default {
       rating: this.restaurant.rating,
       website: this.restaurant.website,
       loading: false,
+      editing: false,
       items: [
         {
           title: '5 Stars',
@@ -182,4 +223,7 @@ export default {
     color: #3273dc;
   }
 
+  iframe{
+    max-width: 100%;
+  }
 </style>

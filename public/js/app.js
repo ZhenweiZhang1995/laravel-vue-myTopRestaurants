@@ -2127,6 +2127,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -2192,6 +2194,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_bulma_rating__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_bulma_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_bulma_rating__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2665,7 +2688,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -2734,7 +2756,7 @@ exports.push([module.i, "/*! bulma.io v0.4.1 | MIT License | github.com/jgthms/b
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 44 */
@@ -2755,7 +2777,7 @@ exports.push([module.i, "\ninput[data-v-3449bc7d]:focus {\n  border: 1px solid #
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.Vuefooter{\n  padding-top: 30px;\n}\n.footer{\n  padding-bottom: 5rem;\n}\n", ""]);
 
 /***/ }),
 /* 47 */
@@ -30736,7 +30758,37 @@ module.exports = Component.exports
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "container"
+  }, [_c('RestaurantForm', {
+    on: {
+      "created": _vm.fetch
+    }
+  }), _vm._v(" "), _c('br'), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.restaurants.length > 0),
+      expression: "restaurants.length > 0"
+    }],
+    staticClass: "RestaurantList"
+  }, _vm._l((_vm.restaurants), function(newRest, index) {
+    return _c('Restaurant', {
+      key: index,
+      attrs: {
+        "restaurant": newRest
+      },
+      on: {
+        "updated": _vm.update,
+        "deleted": function($event) {
+          _vm.remove(index)
+        }
+      }
+    })
+  }))], 1), _vm._v(" "), _c('Vuefooter')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
@@ -31175,26 +31227,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "content has-text-centered"
-  }, [_c('p', [_c('strong', [_vm._v("Bulma")]), _vm._v(" by "), _c('a', {
+  }, [_c('p', [_vm._v("\n          Website developed and designed by "), _c('a', {
+    attrs: {
+      "href": "https://github.com/ZhenweiZhang1995"
+    }
+  }, [_vm._v("Zhenwei Zhang")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v("Bulma")]), _vm._v(" by "), _c('a', {
     attrs: {
       "href": "http://jgthms.com"
     }
-  }, [_vm._v("Jeremy Thomas")]), _vm._v(". The source code is licensed\n          "), _c('a', {
+  }, [_vm._v("Jeremy Thomas")]), _vm._v(".\n        ")]), _vm._v(" "), _c('p', [_c('strong', [_vm._v("vue-bulma")]), _vm._v(" by "), _c('a', {
     attrs: {
-      "href": "http://opensource.org/licenses/mit-license.php"
+      "href": "https://github.com/vue-bulma/datepicker"
     }
-  }, [_vm._v("MIT")]), _vm._v(". The website content\n          is licensed "), _c('a', {
-    attrs: {
-      "href": "http://creativecommons.org/licenses/by-nc-sa/4.0/"
-    }
-  }, [_vm._v("CC ANS 4.0")]), _vm._v(".\n        ")]), _vm._v(" "), _c('p', [_c('a', {
-    staticClass: "icon",
-    attrs: {
-      "href": "https://github.com/jgthms/bulma"
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-github"
-  })])])])])])])
+  }, [_vm._v("Pan Yue")])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -31221,7 +31266,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-content"
   }, [_c('div', {
     staticClass: "content"
-  }, [_c('p', [_c('b', [_vm._v("Style: ")]), _vm._v(_vm._s(_vm.restaurant.style))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Hours: ")]), _vm._v(_vm._s(_vm.restaurant.hours))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Price: ")]), _vm._v(_vm._s(_vm.restaurant.price))]), _vm._v(" "), _vm._m(1), _c('address', {}, [_vm._v(_vm._s(_vm.restaurant.location))]), _c('p'), _vm._v(" "), _c('p', [_c('b', [_vm._v("Telephone: ")]), _vm._v(" "), _c('a', {
+  }, [_c('p', [_c('b', [_vm._v("Style: ")]), _vm._v(_vm._s(_vm.restaurant.style))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Hours: ")]), _vm._v(_vm._s(_vm.restaurant.hours))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Price: ")]), _vm._v(_vm._s(_vm.restaurant.price))]), _vm._v(" "), _vm._m(1), _c('address', [_vm._v(_vm._s(_vm.restaurant.location))]), _c('p'), _vm._v(" "), _c('p', [_c('b', [_vm._v("Telephone: ")]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "'tel:' + restaurant.phone"
     }
@@ -31230,19 +31275,200 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "items": _vm.items,
       "value": _vm.rating
     }
-  })], 1), _vm._v(" "), _c('p'), _vm._v(" "), _c('a', [_vm._v("#" + _vm._s(_vm.restaurant.style))]), _vm._v(". "), _c('a', [_vm._v("#" + _vm._s(_vm.restaurant.location))]), _vm._v(" "), _c('br'), _vm._v(" "), _c('small', [_vm._v("Open Hours: " + _vm._s(_vm.restaurant.hours))])])]), _vm._v(" "), _c('footer', {
+  })], 1), _vm._v(" "), _c('p'), _vm._v(" "), _c('a', [_vm._v("#" + _vm._s(_vm.restaurant.style))]), _vm._v(". "), _c('a', [_vm._v("#" + _vm._s(_vm.restaurant.location))]), _vm._v(" "), _c('br'), _vm._v(" "), _c('small', [_vm._v("Open Hours: " + _vm._s(_vm.restaurant.hours))])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.editing),
+      expression: "editing"
+    }],
+    staticClass: "content"
+  }, [_c('div', {
+    staticClass: "editing"
+  }, [_c('p', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: "name"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.location),
+      expression: "location"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.location)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.location = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phone),
+      expression: "phone"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phone = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.price),
+      expression: "price"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.price)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.price = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.style),
+      expression: "style"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.style)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.style = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.hours),
+      expression: "hours"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.hours)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.hours = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.website),
+      expression: "website"
+    }],
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.website)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.website = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('p', [_c('button', {
+    staticClass: "btn btn-success",
+    on: {
+      "click": _vm.save
+    }
+  }, [_vm._v("Save")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-default",
+    on: {
+      "click": _vm.cancel
+    }
+  }, [_vm._v("Cancel")])])])])]), _vm._v(" "), _c('footer', {
     staticClass: "card-footer"
   }, [_c('a', {
     staticClass: "card-footer-item",
     on: {
-      "click": _vm.save
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.remove($event)
+      }
+    }
+  }, [_vm._v("Remove")]), _vm._v(" "), _c('a', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.editing),
+      expression: "!editing"
+    }],
+    staticClass: "card-footer-item",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.editing = true
+      }
     }
   }, [_vm._v("Edit")]), _vm._v(" "), _c('a', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.editing),
+      expression: "editing"
+    }],
+    staticClass: "card-footer-item",
+    on: {
+      "click": _vm.save
+    }
+  }, [_vm._v("Save")]), _vm._v(" "), _c('a', {
     staticClass: "card-footer-item",
     on: {
       "click": _vm.cancel
     }
-  }, [_vm._v("Delete")])])])])
+  }, [_vm._v("Cancel")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     staticClass: "card-header-icon"
