@@ -47,7 +47,7 @@
               Upload and Rate your favourite restaurant
             </h2>
             <p>
-              <a class="button is-outlined is-info is-inverted">
+              <a href="#restaurant" class="button is-outlined is-info is-inverted">
                 <span>
                   Get Started
                 </span>
@@ -65,7 +65,7 @@
                 <div class="panel-block section">
                   <p class="has-text-centered"><i class="fa fa fa-camera-retro fa-4x icon-block"></i></p>
                   <br>
-                  <p> Post your favourite restaurant</p>
+                  <p> &nbsp &nbsp Post your favourite restaurant</p>
                   <br>
                   <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                 </div>
@@ -74,9 +74,9 @@
             <div class="column is-4">
               <div class="panel">
                 <div class="panel-block section">
-                  <p class="has-text-centered"><i class="fa fa-bar-chart fa-4x icon-block"></i></p>
+                  <p class="has-text-centered"><i class="fa fa-list fa-4x icon-block"></i></p>
                   <br>
-                  <p> Have your own custom restaurant list</p>
+                  <p> &nbsp &nbsp Have your custom restaurant list</p>
                   <br>
                 </div>
 
@@ -86,9 +86,9 @@
             <div class="column is-4">
               <div class="panel">
                 <div class="panel-block section">
-                  <p class="has-text-centered"><i class="fa fa-cloud fa-4x icon-block"></i></p>
+                  <p class="has-text-centered"><i class="fa fa-map fa-4x icon-block"></i></p>
                   <br>
-                  <p>Edit or Delete as you wish</p>
+                  <p>&nbsp &nbsp Get address on Google Map</p>
                   <br>
                   <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                 </div>
@@ -132,5 +132,6 @@ export default {
 .icon-block {
   font-size:5em;
 }
+
 
 </style>

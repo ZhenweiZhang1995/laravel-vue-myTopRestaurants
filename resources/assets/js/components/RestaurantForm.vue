@@ -174,13 +174,6 @@
 
     </div>
 
-    <!-- <article class="tile is-child box">
-      <h1 class="title">Time Picker</h1>
-      <p class="control">
-        <datepicker placeholder="Pick time" :config="{ enableTime: true, enableSeconds: true, noCalendar: true }" value="09:00:00"></datepicker>
-      </p>
-    </article> -->
-
 
   </div>
 </template>
@@ -188,15 +181,13 @@
 <script>
 import axios from 'axios';
 import Rating from 'vue-bulma-rating';
-// import Datepicker from 'vue-bulma-datepicker';
 
-//no loader yet
 
 
 export default {
   components: {
     Rating
-    // Datepicker
+
   },
 
   data(){

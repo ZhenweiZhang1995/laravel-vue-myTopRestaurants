@@ -6,95 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Rate Restaurants</title>
-    <style media="screen">
-      h1,h2,h3,h4,h5{
-        font-family: sans-serif,'Quicksand',;
-      }
-      p{
-        font-family: 'Source Sans Pro', sans-serif;
-      }
-      .styletitle{
-        padding-top: 20px;
-        text-align: center;
-        font-weight: bolder;
-      }
-      .colorpalette p{
-        text-align: center;
-      }
-      .clear {
-          clear: both;
-      }
-      #color,#lists{
-        margin-top: 2%;
-        margin-bottom: 2%;
-        justify-content:space-around;
-        display: flex;
-      }
-      .bluecircle{
-          width: 100px;
-          height: 100px;
-          -webkit-border-radius: 50px;
-          -moz-border-radius: 50px;
-          border-radius: 50px;
-          background: #3273DC;
-          margin-top: 5%;
-          margin-bottom: 5%;
-      }
-
-      .whitecircle{
-        width: 100px;
-        height: 100px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-        background: #f5f5f5;
-        margin-top: 5%;
-        margin-bottom: 5%;
-      }
-
-      .yellowcircle{
-        width: 100px;
-        height: 100px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-          background: #f5bd23;
-          margin-top: 5%;
-          margin-bottom: 5%;
-      }
-      #forms{
-        width:70%;
-        text-align: center;
-        margin-left: 15%;
-      }
-      #forms input:focus{
-        border: 1px solid #3273dc;
-      }
-      #forms textarea:focus{
-        border: 1px solid #3273dc;
-      }
-      #forms select:focus{
-        border: 1px solid #3273dc;
-      }
-      #buttonstyle,#lists,#typography{
-        width:70%;
-        margin-left: 15%;
-      }
-      .styletitle{
-        font-weight: bolder;
-      }
-      #buttonstyle a{
-        margin-left: 1%;
-        margin-right: 1%;
-      }
-      p.light {
-          font-weight: lighter;
-      }
-
-      footer a{
-        color:#3273dc;
-      }
-    </style>
 </head>
   <body>
 
@@ -273,8 +184,6 @@
                 </ol>
               </div>
             </div>
-
-
           </section>
         </div>
         <br>
@@ -297,7 +206,9 @@
           </div>
         </footer>
 
-    <link href="{{ asset('css/hero.css') }}" rel="stylesheet" type="text/css" >
+
+    <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/css/master.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css" media="screen" title="no title">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

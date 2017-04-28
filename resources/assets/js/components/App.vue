@@ -3,7 +3,7 @@
   <Hero></Hero>
    <div class="container">
 
-     <RestaurantForm @created="fetch"></RestaurantForm>
+     <RestaurantForm @created="fetch" id="restaurant"></RestaurantForm>
      <br>
      <br>
 
