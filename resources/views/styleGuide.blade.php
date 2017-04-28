@@ -56,7 +56,7 @@
                 Upload and Rate your favourite restaurant
               </h2>
               <p>
-                <a class="button is-outlined is-info is-inverted">
+                <a href="#restaurant" class="button is-outlined is-info is-inverted">
                   <span>
                     Get Started
                   </span>
