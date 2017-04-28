@@ -4,19 +4,21 @@
 
     <div class="card">
       <header class="card-header">
-        <p class="card-header-title">
+        <h1 class="card-header-title" v-show="!editing">
           {{ restaurant.name }}
-        </p>
-        <a class="card-header-icon">
-          <span class="icon">
-            <i class="fa fa-angle-down"></i>
-          </span>
+        </h1>
+        <h1 class="card-header-title" v-show="editing">
+          <input class="input" type="text" v-model="name" />
+        </h1>
+        <a class="card-header-icon" v-show="!editing">
+          <a>#{{ restaurant.style }}</a> &nbsp &nbsp <a>#{{ restaurant.location }}</a>
         </a>
       </header>
     <div class="card-content">
       <div class="content">
 
-        <div class="columns is-mobile">
+        <!-- viewing mode -->
+        <div class="columns is-mobile" v-show="!editing">
           <div class="column">
             <p><b>Style: </b>{{ restaurant.style }}</p>
             <p><b>Hours: </b>{{ restaurant.hours }}</p>
@@ -32,53 +34,48 @@
           </div>
         </div>
 
-
-
-<!--
-        <p><b>Style: </b>{{ restaurant.style }}</p>
-        <p><b>Hours: </b>{{ restaurant.hours }}</p>
-        <p><b>Price Range: </b>{{ restaurant.price }}</p>
-        <p><b>Location: </b>{{ restaurant.location }}</p>
-        <p><b>Telephone: </b> <a href="'tel:' + restaurant.phone">{{ restaurant.phone }}</a> </p>
-        <p><b>Website: </b>{{ restaurant.website }}</p>
-        <p>
-          <b>Rating: </b>
+        <!-- editting mode -->
+        <div class="columns is-mobile" v-show="editing">
+          <div class="column">
+            <p><b>Style: </b>
+              <div class="select is-fullwidth">
+                <select v-model="style">
+                  <option value="Ameircan">American</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Meditarian">Meditarian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Fast Food">Fast Food</option>
+                </select>
+              </div>
+            </p>
+            <p><b>Hours: </b><input class="input" type="text" v-model="hours" /></p>
+            <p><b>Telephone: </b> <input class="input" type="text" v-model="phone" /> </p>
+            <p><b>Website: </b><input class="input" type="text" v-model="website" /></p>
+          </div>
+          <div class="column">
             <form>
-              <Rating :items="items" :value="rating"></Rating>
+              <Rating :items="items" :value="rating" @change="updateStar"></Rating>
             </form>
-        </p> -->
+            <p><b>Price Range: </b><input class="input" type="text" v-model="price" /></p>
+            <p><b>Location: </b><input class="input" type="text" v-model="location" /></p>
+          </div>
+        </div>
 
         <iframe
         width="300" height="225" frameborder="0" style="border:0"
         :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyBHe3uOWBYiKpzlfrUMoRtqqerXHuoYfkQ&q='+ restaurant.location" allowfullscreen>
         </iframe>
 
-
-        <a>#{{ restaurant.style }}</a>. <a>#{{ restaurant.location }}</a>
         <br>
-        <!-- <small>Open Hours: {{ restaurant.hours }}</small> -->
+
+
       </div>
-      <div class="content" v-show="editing">
-        <div class="editing">
-          <p>
-            <input type="text" v-model="name" />
-            <input type="text" v-model="location" />
-            <input type="text" v-model="phone" />
-            <input type="text" v-model="price" />
-            <input type="text" v-model="style" />
-            <input type="text" v-model="hours" />
-            <input type="text" v-model="website" />
-          </p>
-          <p>
-            <button class="btn btn-success" @click="save">Save</button>
-            <button class="btn btn-default" @click="cancel">Cancel</button>
-          </p>
-        </div>
-      </div>
+
+
     </div>
     <footer class="card-footer">
-      <!-- <button class="btn btn-success" @click="save">Save</button>
-      <button class="btn btn-default" @click="cancel">Cancel</button> -->
+
       <a class="card-footer-item" @click.prevent="remove">Remove</a>
       <a class="card-footer-item" @click.prevent="editing = true" v-show="!editing">Edit</a>
       <a class="card-footer-item" @click="save" v-show="editing">Save</a>
@@ -183,6 +180,7 @@ export default {
           this.editing = false;
         })
         .catch((error) => {
+          this.editing = false;
           console.log('Restaurant -> save error');
           //show the user that it couldn't be updated
         });
@@ -199,6 +197,9 @@ export default {
       this.rating = this.restaurant.rating;
       this.website = this.restaurant.website;
       this.editing = false;
+    },
+    updateStar (val) {
+      this.rating = val
     }
 
   }
@@ -225,5 +226,9 @@ export default {
 
   iframe{
     max-width: 100%;
+  }
+
+  card-header-title{
+    margin-left: 5%;
   }
 </style>
