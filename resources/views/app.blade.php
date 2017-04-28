@@ -10,13 +10,13 @@
     <body>
 
       <div class="hero">
-          <section class="hero is-primary is-large header-image">
+          <section class="hero is-primary is-medium header-image">
             <div class="hero-head">
               <header class="nav">
                 <div class="container">
                   <div class="nav-left">
-                    <a class="nav-item" href="../index.html">
-                      <img src="../image/bulma-white.png" alt="Logo">
+                    <a class="nav-item" href="">
+                      <span>Rate Local Restaurants</span>
                     </a>
                   </div>
                   <span class="nav-toggle">
@@ -109,7 +109,7 @@
 
 
 
-          <footer class="footer">
+          <!-- <footer class="footer">
             <div class="container">
               <div class="content has-text-centered">
                 <p>
@@ -124,7 +124,7 @@
                 </p>
               </div>
             </div>
-          </footer>
+          </footer> -->
       </div>
 
 
@@ -137,7 +137,6 @@
             ]) !!};
         </script>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <script src="{{ mix('js/app.js') }}"></script>

@@ -1,47 +1,5 @@
 <template lang="html">
   <div class="RestaurantForm">
-    <p>
-      name
-    </p>
-    <input type="text" v-model="name" />
-    <p>
-      location
-    </p>
-    <input type="text" v-model="location" />
-    <p>
-      phone
-    </p>
-    <input type="text" v-model="phone" />
-    <p>
-      price
-    </p>
-    <input type="text" v-model="price" />
-    <p>
-      style
-    </p>
-    <input type="text" v-model="style" />
-    <p>
-      hours
-    </p>
-    <input type="text" v-model="hours" />
-    <p>
-      rating
-    </p>
-    <input type="text" v-model="rating" />
-
-    <div class="Ratinga">
-      <form>
-        <Rating :items="items" legend="Default star rating:" :value="rating" @change="updateStar"></Rating>
-      </form>
-      {{ rating }}
-    </div>
-
-    <p>
-      website
-    </p>
-    <input type="text" v-model="website" />
-    <button class="btn btn-primary" @click="create" :disabled="loading">New Restaurant</button>
-
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
@@ -151,7 +109,39 @@
     </div>
 
 
+    <!-- rating part -->
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Rating</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <div class="Ratinga">
+              <form>
+                <Rating kind="grow" :items="items" :value="rating" @change="updateStar"></Rating>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="field-label is-normal">
+          <label class="label">Website</label>
+        </div>
+        <div class="field">
 
+          <p class="control is-expanded has-icons-left">
+            <input class="input" type="text" placeholder="www.google.com" v-model="website">
+            <span class="icon is-small is-left">
+              <i class="fa fa-home"></i>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- comment part -->
     <div class="field is-horizontal">
       <div class="field-label is-normal">
         <label class="label">Comment</label>
@@ -165,6 +155,7 @@
       </div>
     </div>
 
+    <!-- submit button -->
     <div class="field is-horizontal">
       <div class="field-label">
 
