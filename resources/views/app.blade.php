@@ -10,7 +10,7 @@
     <body>
 
       <div class="hero">
-          <section class="hero is-primary is-medium header-image">
+          <section class="hero is-info is-medium header-image">
             <div class="hero-head">
               <header class="nav">
                 <div class="container">
@@ -29,7 +29,7 @@
                       Home
                     </a>
                     <a class="nav-item">
-                      Examples
+                      Style Guide
                     </a>
                     <a class="nav-item">
                       Documentation
@@ -39,7 +39,7 @@
                         <span class="icon">
                           <i class="fa fa-github"></i>
                         </span>
-                        <span>Download</span>
+                        <span>My Github</span>
                       </a>
                     </span>
                   </div>
@@ -55,7 +55,7 @@
                   Upload and Rate your favourite restaurant
                 </h2>
                 <p>
-                  <a class="button is-outlined">
+                  <a class="button is-outlined is-info is-inverted">
                     <span>
                       Get Started
                     </span>
@@ -71,34 +71,34 @@
                 <div class="column is-4">
                   <div class="panel">
                     <div class="panel-block section">
-                      <p class="has-text-centered"><i class="fa fa-camera-retro icon-block"></i></p>
+                      <p class="has-text-centered"><i class="fa fa fa-camera-retro fa-4x icon-block"></i></p>
                       <br>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                      <p> Post your favourite restaurant</p>
                       <br>
-                      <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
+                      <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                     </div>
                   </div>
                 </div>
                 <div class="column is-4">
                   <div class="panel">
                     <div class="panel-block section">
-                      <p class="has-text-centered"><i class="fa fa-bar-chart icon-block"></i></p>
+                      <p class="has-text-centered"><i class="fa fa-bar-chart fa-4x icon-block"></i></p>
                       <br>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                      <p> Have your own custom restaurant list</p>
                       <br>
-                      <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
                     </div>
+
                   </div>
 
                 </div>
                 <div class="column is-4">
                   <div class="panel">
                     <div class="panel-block section">
-                      <p class="has-text-centered"><i class="fa fa-cloud icon-block"></i></p>
+                      <p class="has-text-centered"><i class="fa fa-cloud fa-4x icon-block"></i></p>
                       <br>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+                      <p>Edit or Delete as you wish</p>
                       <br>
-                      <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p>
+                      <!-- <p class="has-text-centered"><a class="button is-info is-outlined">Action</a></p> -->
                     </div>
                   </div>
 
@@ -136,7 +136,9 @@
                 'csrfToken' => csrf_token(),
             ]) !!};
         </script>
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css')}}">
+        <link rel="stylesheet" href="/css/master.css" media="screen" title="no title">
+        <link rel="stylesheet" href="/css/hero.css" media="screen" title="no title">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <script src="{{ mix('js/app.js') }}"></script>

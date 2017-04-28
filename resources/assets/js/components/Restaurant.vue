@@ -1,146 +1,43 @@
 <template lang="html">
   <div class="Restaurant panel panel-default">
-    <h1>Upload your favourite restaurant</h1>
+    <!-- <h1>Upload your favourite restaurant</h1> -->
+
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{ restaurant.name }}
+        </p>
+        <a class="card-header-icon">
+          <span class="icon">
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </a>
+      </header>
+    <div class="card-content">
+      <div class="content">
+        <p><b>Style: </b>{{ restaurant.style }}</p>
+        <p><b>Hours: </b>{{ restaurant.hours }}</p>
+        <p><b>Price: </b>{{ restaurant.price }}</p>
+        <p><b>Location: </b>{{ restaurant.location }}</p>
+        <p><b>Telephone: </b> <a href="'tel:' + restaurant.phone">{{ restaurant.phone }}</a> </p>
+        <p><b>Website: </b>{{ restaurant.website }}</p>
+
+        <iframe
+        width="600" height="450" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHe3uOWBYiKpzlfrUMoRtqqerXHuoYfkQ
+        &q=Space+Needle,Seattle+WA" allowfullscreen>
+        </iframe>
 
 
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Restaurant name</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-grouped">
-      <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="Name" v-model="name" ／>
-        <span class="icon is-small is-left">
-          <i class="fa fa-cutlery"></i>
-        </span>
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Style</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-normal">
-      <div class="control">
-        <div class="select is-fullwidth">
-          <select v-model="style">
-            <option>American</option>
-            <option>Chinese</option>
-            <option>Italian</option>
-            <option>Meditarian</option>
-            <option>Japanese</option>
-            <option>Fast Food</option>
-          </select>
-        </div>
+        <a>#{{ restaurant.style }}</a>. <a>#{{ restaurant.location }}</a>
+        <br>
+        <small>Open Hours: {{ restaurant.hours }}</small>
       </div>
     </div>
-
-  </div>
-</div>
-
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Hours</label>
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <input class="input" type="text" placeholder="e.g. 10am - 10pm" v-model="hours" ／>
-      </div>
-      <!-- <p class="help is-danger">
-        This field is required
-      </p> -->
-    </div>
-  </div>
-</div>
-
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Location</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-grouped">
-      <p class="control is-expanded has-icons-left">
-        <input class="input" type="text" placeholder="places" v-model="location" ／>
-        <span class="icon is-small is-left">
-          <i class="fa fa-map-marker"></i>
-        </span>
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-
-<div class="field is-horizontal">
-<div class="field-label is-normal">
-<label class="label">Price range</label>
-</div>
-<div class="field-body">
-<div class="field is-grouped">
-  <p class="control is-expanded has-icons-left has-icons-right">
-    <input class="input" type="text" placeholder="10 - 20" value="" v-model="price" ／>
-    <span class="icon is-small is-left">
-      <i class="fa fa-usd"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fa fa-check"></i>
-    </span>
-  </p>
-</div>
-<div class="field-label is-normal">
-  <label class="label">Telephone</label>
-</div>
-<div class="field">
-
-  <p class="control is-expanded has-icons-left">
-    <input class="input" type="text" placeholder="+1 (919) XXX XXXX" v-model="phone" ／>
-    <span class="icon is-small is-left">
-      <i class="fa fa-phone"></i>
-    </span>
-  </p>
-</div>
-</div>
-</div>
-
-
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Comment</label>
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <textarea class="textarea" placeholder="How do you like this restaurant?"></textarea>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label">
-    <!-- Left empty for spacing -->
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <button class="button is-primary" @click="create" :disabled="loading" ／>
-          Post Restaurant
-        </button>
-      </div>
-    </div>
-  </div>
-
+    <footer class="card-footer">
+      <a class="card-footer-item">Edit</a>
+      <a class="card-footer-item">Delete</a>
+    </footer>
 </div>
 
 
@@ -151,10 +48,15 @@
 
 <script>
 import axios from 'axios';
+import Rating from 'vue-bulma-rating';
 export default {
+  components: {
+    Rating
+  },
   props: [
     'restaurant'
   ],
+
   data () {
     return {
       name: this.restaurant.name,
@@ -237,5 +139,19 @@ export default {
 </script>
 
 <style lang="css">
+  .Restaurant{
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 120%;
+  }
+
+  a{
+    color: #3273dc;
+  }
 
 </style>

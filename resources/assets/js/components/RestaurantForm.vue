@@ -1,5 +1,7 @@
 <template lang="html">
   <div class="RestaurantForm">
+    <h1>Post a Restaurant</h1>
+    <hr>
 
     <div class="field is-horizontal">
       <div class="field-label is-normal">
@@ -163,7 +165,7 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <button class="button is-primary" @click="create" :disabled="loading">
+            <button class="button is-info" @click="create" :disabled="loading">
               Post Restaurant
             </button>
           </div>
@@ -172,6 +174,13 @@
 
     </div>
 
+    <!-- <article class="tile is-child box">
+      <h1 class="title">Time Picker</h1>
+      <p class="control">
+        <datepicker placeholder="Pick time" :config="{ enableTime: true, enableSeconds: true, noCalendar: true }" value="09:00:00"></datepicker>
+      </p>
+    </article> -->
+
 
   </div>
 </template>
@@ -179,6 +188,7 @@
 <script>
 import axios from 'axios';
 import Rating from 'vue-bulma-rating';
+// import Datepicker from 'vue-bulma-datepicker';
 
 //no loader yet
 
@@ -186,6 +196,7 @@ import Rating from 'vue-bulma-rating';
 export default {
   components: {
     Rating
+    // Datepicker
   },
 
   data(){
@@ -278,4 +289,29 @@ export default {
 </script>
 
 <style scoped>
+
+input:focus {
+  border: 1px solid #3273dc;
+}
+
+select:focus{
+  border: 1px solid #3273dc;
+}
+
+textarea:focus{
+  border: 1px solid #3273dc;
+}
+
+.RestaurantForm{
+  width:80%;
+  margin-left: 10%;
+}
+h1{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 120%;
+}
+hr{
+  color: #3273dc;
+}
 </style>

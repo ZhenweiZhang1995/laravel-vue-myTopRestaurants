@@ -7,7 +7,7 @@ window._ = require('lodash');
  */
 
 require('bulma');
-//window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 //require('bootstrap-sass');
 

@@ -2,17 +2,22 @@
  <div class="container">
 
    <RestaurantForm @created="fetch"></RestaurantForm>
+   <br>
+   <div class="RestaurantList" v-show="restaurants.length > 0">
+     <Restaurant v-for="(newRest, index) in restaurants" :key="index" :restaurant="newRest" @updated="update" @deleted="remove(index)"></Restaurant>
+   </div>
+   <!-- <Restaurant></Restaurant> -->
  </div>
 </template>
 
 <script>
 import axios from 'axios';
-// import Restaurant from './Restaurant';
+import Restaurant from './Restaurant';
 import RestaurantForm from './RestaurantForm';
 
 export default {
   components: {
-    // Restaurant,
+    Restaurant,
     RestaurantForm
   },
 
